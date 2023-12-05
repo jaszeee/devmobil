@@ -1,0 +1,7 @@
+{
+  "name": "TheNicheApp",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
