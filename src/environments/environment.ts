@@ -10,3 +10,4 @@ export const environment = {
   apiKey: result.parsed?.['API_KEY'] || 'mongodb+srv://admin:TheNiche1234@clustertheniche.dzl3a3c.mongodb.net/?retryWrites=true&w=majority',
   dbPassword: result.parsed?.['DB_PASSWORD'] || 'TheNiche1234',
 };
+ 

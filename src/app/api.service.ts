@@ -10,11 +10,27 @@ export class ApiService {
 
   constructor(private http: HttpClient) { }
 
-  // Exemple de méthode pour effectuer un appel GET à l'API
-  getSomeData(): Observable<any> {
-    const url = `${this.apiUrl}/endpoint`;
-    return this.http.get(url);
+  // Méthode générique pour effectuer une requête HTTP
+  private request(method: string, endpoint: string, body?: any): Observable<any> {
+    const url = `${this.apiUrl}${endpoint}`;
+    const headers = new HttpHeaders();
+
+    // Ajoutez vos en-têtes personnalisés ici si nécessaire
+    // headers.append('Authorization', 'Bearer ' + yourToken);
+
+    return this.http.request(method, url, { body, headers });
   }
 
-  // Ajoutez d'autres méthodes pour les appels POST, PUT, DELETE, etc.
+  // Exemple de méthode pour effectuer un appel GET à l'API
+  getSomeData(): Observable<any> {
+    return this.request('GET', '/endpoint');
+  }
+
+  // Exemple de méthode pour effectuer un appel POST à l'API
+  postData(data: any): Observable<any> {
+    return this.request('POST', '/endpoint', data);
+  }
+
+  // Ajoutez d'autres méthodes pour les appels PUT, DELETE, etc.
+
 }
