@@ -7,6 +7,6 @@ const result = dotenv.config({ path: envPath });
 
 export const environment = {
   production: false,
-  apiKey: result.parsed?.API_KEY || 'mongodb+srv://admin:TheNiche1234@clustertheniche.dzl3a3c.mongodb.net/?retryWrites=true&w=majority',
-  dbPassword: result.parsed?.DB_PASSWORD || 'TheNiche1234',
+  apiKey: result.parsed?.['API_KEY'] || 'mongodb+srv://admin:TheNiche1234@clustertheniche.dzl3a3c.mongodb.net/?retryWrites=true&w=majority',
+  dbPassword: result.parsed?.['DB_PASSWORD'] || 'TheNiche1234',
 };
